@@ -1,0 +1,29 @@
+/*
+* Custom styles for the Twentieth anniversary theme
+*/
+.slide-section {
+    align-content: center;
+    min-height: 100vh;
+    opacity: 0;
+    transition: all 2s;
+}
+
+.intro {
+    background: linear-gradient(to top, $blue, $blue-darker);
+    color: $white;
+    font-family: $ubuntu;
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .font-04 {
+            font-family: 'Times New Roman', Times, serif;
+        }
+    }
+}
+
+.show {
+    opacity: 1;
+}

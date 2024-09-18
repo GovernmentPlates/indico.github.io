@@ -57,6 +57,7 @@ $xl:               1200px;
 @import '_base';
 @import '_plugins';
 @import '_syntax-highlighting';
+@import 'twenty'; // Twentieth anniversary theme
 
 
 .col-centered {
@@ -1510,5 +1511,98 @@ a.no-decoration {
 @media (max-width: $xs) {
     .xs-hidden {
         display: none !important;
+    }
+}
+
+
+// Twentieth anniversary styles
+
+$gradient-text: linear-gradient(to right, #005e83, #00c7e4);
+$ind-dark-blue: #002939;
+$ind-light-blue: #00A4E4;
+
+.gradient-text {
+    background: $gradient-text;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.announcement-banner {
+    background-color: #161a20;
+    color: $white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 30px;
+    animation: fadeIn 1.5s;
+
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+
+    // .title, .subtitle {
+    //     font-family: $ubuntu;
+    //     margin-bottom: 0;
+    // }
+
+    .title {
+        font-size: 2.8vh;
+        margin-bottom: 0;
+    }
+
+    .subtitle {
+        font-size: 2vh;
+        margin-bottom: 0;
+    }
+
+    .text-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-family: $ubuntu;
+    }
+
+    .button-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .announcement-button {
+        padding: 0.5em 1em;
+        background-color: #161a20;
+        border-radius: 40px;
+        color: $white;
+        font-family: $quicksand;
+        background: linear-gradient(#161a20, #161a20) padding-box,
+              linear-gradient(to bottom right, $ind-dark-blue, $ind-light-blue) border-box;
+        border-radius: 40px;
+        border: 4px solid transparent;
+    }
+
+    .announcement-button:hover {
+        box-shadow: -1px 0px 15px 2px #237292;
+        background: linear-gradient(transparent, transparent) padding-box,
+              linear-gradient(to bottom right, $ind-dark-blue, $ind-light-blue) border-box !important;
+    }
+}
+
+// Responsive fixes...
+
+@media (max-width: $sm) {
+    .hero-spotlight {
+        margin-top: 0;
+    }
+
+    .announcement-banner {
+        flex-direction: column;
+        gap: 10px;
+
+        .title {
+            align-self: center;
+        }
     }
 }
